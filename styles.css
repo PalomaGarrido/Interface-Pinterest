@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    color: rgb(33, 25, 34);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 12px;
+}
+
+/* Add style to the top navigation bar */
+.menu {
+    margin: 15px;
+    display: flex;
+    flex: 1 1 auto;
+    height: 56px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 17px;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 4px;
+    padding-top: 2px;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: var(--font-weight-semibold);
+    object-fit: contain;
+  }
+
+  
+  /* Style the links inside the navigation bar */
+  .menu a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 25px;
+  }
+
+  .menu i.fa-brands{
+      padding-right: 11px;
+  }
+
+  .menu i.fa-solid{
+    padding: 10px;
+    object-fit: cover;
+    color: #696969;
+  }
+
+  /* Change the color of links on hover */
+  .menu a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Style the "menu-inicio" element to highlight the current page*/
+  .menu a.menu-inicio {
+    background-color: black;
+    color: white;
+  }
+
+
+  .buscador{
+    background-color: #DCDCDC;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-items: center;
+    position: relative;
+    border-radius: 25px;
+    border: none;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    outline: none;
+}
+ 
+  /* Style the search box inside the navigation bar*/
+  .buscador input[type=text] {
+    background-color: transparent;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: normal;
+    height: 100%;
+    padding: 0px;
+    width: 100%;
+  }
+
+  .buscador input[placeholder="Buscar"]{
+    padding-left: 1px;
+    padding-right: 7px;
+    border-radius: 25px;
+    border: none;
+    background-color: transparent;
+  }
+  
+  /* When the screen is less than 847px wide, search bar, menu-hoy and menu-crear disapear */
+  @media screen and (max-width: 847px) {
+    .menu a.menu-hoy {
+      display: none;
+    }
+
+    .menu a.menu-crear {
+      display: none;
+    }
+
+    .menu .buscador input[placeholder="Buscar"]{
+      display: none;
+    }
+
+    .buscador{
+      background-color: transparent;
+    }
+  }
+
+  /*Barra de navegador queda pegada arriba al hacer scroll*/
+  #navbar-pinterest {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+  }
+ 
+  
+  
+  /*contacins all images*/
+  .containerimg {
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: 380px;
+    grid-auto-flow: row dense;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    padding-top: 100px;
+    padding-left: 4%;
+    padding-right: 4%;
+    font-weight: 600;
+    font-size: small;
+    
+  }
+
+  /* cuando tenga 320px de ancho todas img abarquen 1 fracción y estén en 1 columna*/
+  @media all and (min-width: 320px) {
+    .containerimg {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media all and (min-width: 320px) {
+    .containerimg {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+/*cuando tenga 768px de ancho todas la img estarán en 3columnas, cada una mide 1 fracción*/
+  @media all and (min-width: 768px) {
+    .containerimg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media all and (min-width: 1024px) {
+    .containerimg {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  /*we style the images*/
+  .containerimg img{
+    max-width: 100%;  
+    object-fit: cover; 
+    border-radius: 25px;
+    
+  }
+
+.containerimg div{
+  height: 100%;
+  margin: 10px;
+}
+
+/*se ajustan dos imagenes con misma clase en el contenedor */
+.containerimg .item{
+  padding-top: 27%;
+  justify-self: start; 
+  align-self:baseline;
+}
